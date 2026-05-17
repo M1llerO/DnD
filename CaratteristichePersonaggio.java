@@ -9,7 +9,7 @@ public class CaratteristichePersonaggio {
     static void assegna(Personaggio pg) {
  
         int PuntiTotali = 27;
- 
+        while ( PuntiTotali > 0) {
         System.out.println("Hai tutte le caratteristiche ad 8, e 27 punti disponibili.");
         System.out.println("Incrementa le tue caratteristiche fino ad un massimo di 15.");
         System.out.println();
@@ -67,7 +67,7 @@ public class CaratteristichePersonaggio {
             else if (pg.carisma - 8 > PuntiTotali) System.out.println("Punti insufficienti!");
         } while (pg.carisma < 8 || pg.carisma > 15 || pg.carisma - 8 > PuntiTotali);
         PuntiTotali -= (pg.carisma - 8);
- 
+        }
         // RIEPILOGO PERSONAGGIO CON MODIFICATORI
         System.out.println();
         System.out.println("=== Scheda Personaggio ===");
