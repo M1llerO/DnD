@@ -7,27 +7,34 @@ public class CaratteristichePersonaggio {
     // INSERIMENTO STATISTICHE E RIEPILOGO SCHEDA
     static void assegna(Personaggio pg) {
         int PuntiTotali = 27;
-     
+     while (PuntiTotali>0){
+        
         System.out.println("Hai tutte le caratteristiche ad 8, e 27 punti disponibili, incrementa le tue caratteristiche fino ad un massimo di 15.");
         System.out.print("Forza: ");
         pg.forza = Console.readInt();
         PuntiTotali = PuntiTotali - pg.forza + 8;
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
         System.out.print("Destrezza: ");
         pg.destrezza = Console.readInt();
         PuntiTotali = PuntiTotali - pg.destrezza + 8;
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
         System.out.print("Costituzione: ");
         pg.costituzione = Console.readInt();
         PuntiTotali = PuntiTotali - pg.costituzione + 8;
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
         System.out.print("Intelligenza: ");
         pg.intelligenza = Console.readInt();
         PuntiTotali = PuntiTotali - pg.intelligenza + 8;
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
         System.out.print("Saggezza: ");
         pg.saggezza = Console.readInt();
         PuntiTotali = PuntiTotali - pg.saggezza + 8;
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
         System.out.print("Carisma: ");
         pg.carisma = Console.readInt();
         PuntiTotali = PuntiTotali - pg.carisma + 8;
- 
+        System.out.println("Ti sono rimasti " + PuntiTotali + " punti");
+     }
         // RIEPILOGO PERSONAGGIO CON MODIFICATORI
         System.out.println();
         System.out.println("=== Scheda Personaggio ===");
