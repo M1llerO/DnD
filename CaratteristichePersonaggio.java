@@ -4,18 +4,17 @@ import com.generation.library.*;
 // + riepilogo scheda + scelta modificatore durante il gioco
  
 public class CaratteristichePersonaggio {
-
  
     // INSERIMENTO STATISTICHE E RIEPILOGO SCHEDA
     static void assegna(Personaggio pg) {
  
         int PuntiTotali = 27;
-        while ( PuntiTotali > 0) {
+ 
         System.out.println("Hai tutte le caratteristiche ad 8, e 27 punti disponibili.");
         System.out.println("Incrementa le tue caratteristiche fino ad un massimo di 15.");
         System.out.println();
  
-        // FORZA - do/while controlla che il valore sia tra 8 e 15 e che i punti bastino
+        // FORZA
         do {
             System.out.print("Forza (8-15, punti rimasti: " + PuntiTotali + "): ");
             pg.forza = Console.readInt();
@@ -68,7 +67,28 @@ public class CaratteristichePersonaggio {
             else if (pg.carisma - 8 > PuntiTotali) System.out.println("Punti insufficienti!");
         } while (pg.carisma < 8 || pg.carisma > 15 || pg.carisma - 8 > PuntiTotali);
         PuntiTotali -= (pg.carisma - 8);
+ 
+        // RIASSEGNAZIONE PUNTI RIMASTI
+        while (PuntiTotali > 0) {
+            System.out.println("Ti sono rimasti " + PuntiTotali + " punti! A quale caratteristica vuoi aggiungerli?");
+            System.out.println("1. Forza        (attuale: " + pg.forza + ")");
+            System.out.println("2. Destrezza    (attuale: " + pg.destrezza + ")");
+            System.out.println("3. Costituzione (attuale: " + pg.costituzione + ")");
+            System.out.println("4. Intelligenza (attuale: " + pg.intelligenza + ")");
+            System.out.println("5. Saggezza     (attuale: " + pg.saggezza + ")");
+            System.out.println("6. Carisma      (attuale: " + pg.carisma + ")");
+            int scelta = Console.readInt();
+ 
+            // controllo che la caratteristica scelta non superi 15 con i punti aggiunti
+            if (scelta == 1 && pg.forza < 15) { pg.forza++; PuntiTotali--; }
+            else if (scelta == 2 && pg.destrezza < 15) { pg.destrezza++; PuntiTotali--; }
+            else if (scelta == 3 && pg.costituzione < 15) { pg.costituzione++; PuntiTotali--; }
+            else if (scelta == 4 && pg.intelligenza < 15) { pg.intelligenza++; PuntiTotali--; }
+            else if (scelta == 5 && pg.saggezza < 15) { pg.saggezza++; PuntiTotali--; }
+            else if (scelta == 6 && pg.carisma < 15) { pg.carisma++; PuntiTotali--; }
+            else System.out.println("Caratteristica gia' al massimo o scelta non valida!");
         }
+ 
         // RIEPILOGO PERSONAGGIO CON MODIFICATORI
         System.out.println();
         System.out.println("=== Scheda Personaggio ===");
@@ -83,7 +103,6 @@ public class CaratteristichePersonaggio {
         System.out.println("INT: " + pg.intelligenza + " (mod: " + Personaggio.calcolaModificatore(pg.intelligenza) + ")");
         System.out.println("SAG: " + pg.saggezza + " (mod: " + Personaggio.calcolaModificatore(pg.saggezza) + ")");
         System.out.println("CAR: " + pg.carisma + " (mod: " + Personaggio.calcolaModificatore(pg.carisma) + ")");
-        System.out.println("Punti rimasti: " + PuntiTotali);
         System.out.println();
     }
  
@@ -106,3 +125,4 @@ public class CaratteristichePersonaggio {
         return Personaggio.calcolaModificatore(pg.carisma);
     }
 }
+ 
