@@ -4,6 +4,7 @@ import com.generation.library.*;
 // + riepilogo scheda + scelta modificatore durante il gioco
  
 public class CaratteristichePersonaggio {
+
  
     // INSERIMENTO STATISTICHE E RIEPILOGO SCHEDA
     static void assegna(Personaggio pg) {
