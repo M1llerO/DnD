@@ -6,20 +6,27 @@ public class CaratteristichePersonaggio {
  
     // INSERIMENTO STATISTICHE E RIEPILOGO SCHEDA
     static void assegna(Personaggio pg) {
- 
-        System.out.println("Inserisci le statistiche (valore da 1 a 20):");
+        int PuntiTotali = 27;
+     
+        System.out.println("Hai tutte le caratteristiche ad 8, e 27 punti disponibili, incrementa le tue caratteristiche fino ad un massimo di 15.");
         System.out.print("Forza: ");
         pg.forza = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.forza + 8;
         System.out.print("Destrezza: ");
         pg.destrezza = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.destrezza + 8;
         System.out.print("Costituzione: ");
         pg.costituzione = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.costituzione + 8;
         System.out.print("Intelligenza: ");
         pg.intelligenza = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.intelligenza + 8;
         System.out.print("Saggezza: ");
         pg.saggezza = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.saggezza + 8;
         System.out.print("Carisma: ");
         pg.carisma = Console.readInt();
+        PuntiTotali = PuntiTotali - pg.carisma + 8;
  
         // RIEPILOGO PERSONAGGIO CON MODIFICATORI
         System.out.println();
