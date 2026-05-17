@@ -33,28 +33,28 @@ public class SimulatoreDadi {
  
             // SCELTA CARATTERISTICA - il modificatore dipende dalla caratteristica usata
             System.out.println("Quale caratteristica usi?");
-            System.out.println("1. Forza        (mod: " + calcolaModificatore(pg.forza)        + ")");
-            System.out.println("2. Destrezza    (mod: " + calcolaModificatore(pg.destrezza)     + ")");
-            System.out.println("3. Costituzione (mod: " + calcolaModificatore(pg.costituzione)  + ")");
-            System.out.println("4. Intelligenza (mod: " + calcolaModificatore(pg.intelligenza)  + ")");
-            System.out.println("5. Saggezza     (mod: " + calcolaModificatore(pg.saggezza)      + ")");
-            System.out.println("6. Carisma      (mod: " + calcolaModificatore(pg.carisma)       + ")");
+            System.out.println("1. Forza        (mod: " + Personaggio.calcolaModificatore(pg.forza)        + ")");
+            System.out.println("2. Destrezza    (mod: " + Personaggio.calcolaModificatore(pg.destrezza)     + ")");
+            System.out.println("3. Costituzione (mod: " + Personaggio.calcolaModificatore(pg.costituzione)  + ")");
+            System.out.println("4. Intelligenza (mod: " + Personaggio.calcolaModificatore(pg.intelligenza)  + ")");
+            System.out.println("5. Saggezza     (mod: " + Personaggio.calcolaModificatore(pg.saggezza)      + ")");
+            System.out.println("6. Carisma      (mod: " + Personaggio.calcolaModificatore(pg.carisma)       + ")");
             int sceltaStat = Console.readInt();
  
             // ASSEGNO IL MODIFICATORE IN BASE ALLA CARATTERISTICA SCELTA
             int modificatore;
             if (sceltaStat == 1) {
-                modificatore = calcolaModificatore(pg.forza);
+                modificatore = Personaggio.calcolaModificatore(pg.forza);
             } else if (sceltaStat == 2) {
-                modificatore = calcolaModificatore(pg.destrezza);
+                modificatore = Personaggio.calcolaModificatore(pg.destrezza);
             } else if (sceltaStat == 3) {
-                modificatore = calcolaModificatore(pg.costituzione);
+                modificatore = Personaggio.calcolaModificatore(pg.costituzione);
             } else if (sceltaStat == 4) {
-                modificatore = calcolaModificatore(pg.intelligenza);
+                modificatore = Personaggio.calcolaModificatore(pg.intelligenza);
             } else if (sceltaStat == 5) {
-                modificatore = calcolaModificatore(pg.saggezza);
+                modificatore = Personaggio.calcolaModificatore(pg.saggezza);
             } else {
-                modificatore = calcolaModificatore(pg.carisma);
+                modificatore = Personaggio.calcolaModificatore(pg.carisma);
             }
  
             // VANTAGGIO/SVANTAGGIO
