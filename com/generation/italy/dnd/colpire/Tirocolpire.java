@@ -46,7 +46,7 @@ public class Tirocolpire {
 
                 // CICLO DADI DANNO
                 boolean AltroDado = true;
-                while (AltroDado == true) {
+                while (AltroDado) {
 
                     // L'UTENTE INSERISCE LE FACCE
                     System.out.print("Quante facce ha il dado danno? ");
