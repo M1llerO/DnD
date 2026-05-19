@@ -30,11 +30,13 @@ public class SimulatoreDadi {
             // SCELTA CARATTERISTICA E CALCOLO MODIFICATORE
             int modificatore = CaratteristichePersonaggio.scegliModificatore(pg);
 
-            // CHIAMO LA CLASSE GIUSTA IN BASE AL TIPO DI TIRO
-            if (tipoTiro == 2) {
-                Tiroabilita.esegui(modificatore);
-            } else {
-                Tirocolpire.esegui(modificatore);
+            // CHIAMO LA CLASSE GIUSTA - passa anche il personaggio a Tirocolpire
+            switch (tipoTiro) {
+                case 2:
+                    Tiroabilita.esegui(modificatore);
+                    break;
+                default:
+                    Tirocolpire.esegui(modificatore, pg);
             }
 
             // CHIEDO SE VUOLE RILANCIARE

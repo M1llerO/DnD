@@ -5,6 +5,7 @@ public class Personaggio {
     public String nome;
     public String specie;
     public String classe;
+    public String arma;
     public int livello;
     public int forza;
     public int destrezza;
@@ -20,3 +21,4 @@ public class Personaggio {
         return (punteggio - 10) / 2;
     }
 }
+

@@ -3,7 +3,7 @@ package com.generation.italy.dnd.creazione;
 import com.generation.italy.dnd.personaggio.Personaggio;
 import com.generation.library.*;
 
-// CREAZIONE PERSONAGGIO - gestisce nome, specie, classe, PF e CA
+// CREAZIONE PERSONAGGIO - gestisce nome, specie, classe, arma, PF e CA
 public class CreazionePersonaggio {
 
     public static Personaggio crea() {
@@ -34,6 +34,18 @@ public class CreazionePersonaggio {
             pg.classe = Console.readString();
         }
 
+        // ARMA CON VALIDAZIONE
+        System.out.println("Arma (Pugnale, Scimitarra, SpadaCorta, AsciaGuerra, Flagello, Lancia,");
+        System.out.println("      SpadaLunga, MartelloGuerra, PicconeGuerra, Stocco, Alabarda,");
+        System.out.println("      Picca, LanciaGiostra, AsciaDueMani, Spadone, Falcione): ");
+        System.out.print("Arma: ");
+        pg.arma = Console.readString();
+        while (armaValida(pg.arma) == false) {
+            System.out.println("Arma non valida! Riprova.");
+            System.out.print("Arma: ");
+            pg.arma = Console.readString();
+        }
+
         pg.livello = 1;
 
         // PUNTI FERITA E CLASSE ARMATURA
@@ -45,7 +57,27 @@ public class CreazionePersonaggio {
         return pg;
     }
 
-    // VALIDAZIONE SPECIE - restituisce true se la specie esiste in D&D 2024
+    // VALIDAZIONE ARMA
+    public static boolean armaValida(String arma) {
+        return arma.equalsIgnoreCase("Pugnale")       ||
+                arma.equalsIgnoreCase("Scimitarra")    ||
+                arma.equalsIgnoreCase("SpadaCorta")    ||
+                arma.equalsIgnoreCase("AsciaGuerra")   ||
+                arma.equalsIgnoreCase("Flagello")      ||
+                arma.equalsIgnoreCase("Lancia")        ||
+                arma.equalsIgnoreCase("SpadaLunga")    ||
+                arma.equalsIgnoreCase("MartelloGuerra")||
+                arma.equalsIgnoreCase("PicconeGuerra") ||
+                arma.equalsIgnoreCase("Stocco")        ||
+                arma.equalsIgnoreCase("Alabarda")      ||
+                arma.equalsIgnoreCase("Picca")         ||
+                arma.equalsIgnoreCase("LanciaGiostra") ||
+                arma.equalsIgnoreCase("AsciaDueMani")  ||
+                arma.equalsIgnoreCase("Spadone")       ||
+                arma.equalsIgnoreCase("Falcione");
+    }
+
+    // VALIDAZIONE SPECIE
     public static boolean specieValida(String specie) {
         return specie.equalsIgnoreCase("Umano")      ||
                 specie.equalsIgnoreCase("Elfo")       ||
@@ -59,7 +91,7 @@ public class CreazionePersonaggio {
                 specie.equalsIgnoreCase("Aasimar");
     }
 
-    // VALIDAZIONE CLASSE - restituisce true se la classe esiste in D&D 2024
+    // VALIDAZIONE CLASSE
     public static boolean classeValida(String classe) {
         return classe.equalsIgnoreCase("Barbaro")   ||
                 classe.equalsIgnoreCase("Bardo")     ||
