@@ -10,8 +10,8 @@ public class Dado {
         return (int)(Math.random() * facce) + 1;
     }
  
-    // TIRA SCELTA - chiede le facce all'utente, valida e restituisce il risultato
-    public static int tiraScelta() {
+    // CHIEDI FACCE - chiede le facce all'utente, valida e le restituisce
+    public static int chiedigFacce() {
         System.out.print("Quante facce ha il dado? ");
         int facce = Console.readInt();
         while (dadoValido(facce) == false) {
@@ -19,7 +19,7 @@ public class Dado {
             System.out.print("Quante facce ha il dado? ");
             facce = Console.readInt();
         }
-        return tira(facce);
+        return facce;
     }
  
     // DADO VALIDO - controlla che il dado esista in D&D
