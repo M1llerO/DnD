@@ -17,9 +17,9 @@ public class Tiroabilita {
             // FUMBLE - fallimento automatico, modificatore non applicato
             System.out.println("*** FUMBLE! ***");
             int effetto = Dado.tira(3);
-            if (effetto == 1) System.out.println("Hai colpito te stesso!");
-            if (effetto == 2) System.out.println("Hai perso l'arma!");
-            if (effetto == 3) System.out.println("Sei caduto a terra!");
+            if (effetto == 1) System.out.println("FALLIMENTO TOTALE!");
+            if (effetto == 2) System.out.println("Fallimento Critico!");
+            if (effetto == 3) System.out.println("Fallimento critico");
         } else if (tiroBase == 20) {
             // CRITICO - successo automatico
             System.out.println("*** CRITICO! ***");
